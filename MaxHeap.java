@@ -43,7 +43,17 @@ public class MaxHeap<T extends Comparable <T>> {
 	}
 
 	public T peek() {
+		if (size == 1) {
+			T temp = list.get(0);
+			list.set(0, null);
+			return  temp;
+		}
 		return list.get(0);
+	}
+
+	public T removeMax() {
+		exchange(0, size);
+
 	}
 
 	private void sink(int curr) {
