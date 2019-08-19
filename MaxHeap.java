@@ -19,7 +19,6 @@ public class MaxHeap<T extends Comparable <T>> {
 	}
 
 	public void insert(T data) {
-		++size;
 		//checks if heap is empty
 		if (size == 0) {
 			list.add(data);
@@ -27,16 +26,20 @@ public class MaxHeap<T extends Comparable <T>> {
 		// adds to bottom first and looks to bubble up
 		else {
 			list.add(data);
-			bubbleInsert(size - 1);
+			// recursive function will bubble up the insertions until in the right place
+			bubbleInsert(size);
 		}
+		++size;
 	}
 
 
 	// exchange helper method for two points of the heap
 	private void exchange(int first, int second) {
 		T temp = list.get(first);
-		list.add(first, list.get(second));
-		list.add(second, temp);
+		// System.out.println(this.list);
+		list.set(first, list.get(second));
+		list.set(second, temp);
+		// System.out.println(this.list);
 	}
 
 	public static void main(String[] args) {
@@ -45,5 +48,6 @@ public class MaxHeap<T extends Comparable <T>> {
 		heap.insert(1);
 		heap.insert(2);
 		System.out.println(heap.size);
+		System.out.println(heap.list);
 	}
 }
