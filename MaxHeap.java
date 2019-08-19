@@ -42,14 +42,19 @@ public class MaxHeap<T extends Comparable <T>> {
 		// System.out.println(this.list);
 	}
 
+	public T peek() {
+		return list.get(0);
+	}
+
 	public static void main(String[] args) {
 
 		MaxHeap<Integer> heap = new MaxHeap<>();
-		heap.insert(1);
-		heap.insert(2);
-		heap.insert(10);
-		heap.insert(9);
+		heap.add(1);
+		heap.add(2);
+		heap.add(10);
+		heap.add(9);
 		System.out.println(heap.size);
 		System.out.println(heap.list);
+		System.out.println(heap.peek());
 	}
 }
