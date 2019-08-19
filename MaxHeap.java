@@ -7,9 +7,11 @@ public class MaxHeap<T extends Comparable <T>> {
 
 	//bubbles up current index of heap by comparing to parent index, if greater than swaps
 	public void bubbleInsert(int curr) {
+		int parent = (curr - 1) / 2;
 		if (curr == 0) return;
-		if (list.get(curr).compareTo(list.get(curr - 1) / 2)) {
-			exchange(curr, (curr - 1) / 2)
+		if (list.get(curr).compareTo(list.get(parent)) > 0) {
+			exchange(curr, parent);
+			bubbleInsert(parent);
 		}
 		else {
 			return;
