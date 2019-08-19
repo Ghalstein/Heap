@@ -28,8 +28,6 @@ public class MaxHeap<T extends Comparable <T>> {
 		else {
 			list.add(data);
 			bubbleInsert(size - 1);
-			// making an exchange method first
-
 		}
 	}
 
@@ -46,5 +44,6 @@ public class MaxHeap<T extends Comparable <T>> {
 		MaxHeap<Integer> heap = new MaxHeap<>();
 		heap.insert(1);
 		heap.insert(2);
+		System.out.println(heap.size);
 	}
 }
