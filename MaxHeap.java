@@ -5,8 +5,19 @@ public class MaxHeap<T extends Comparable <T>> {
 	private ArrayList<T> list = new ArrayList<>();
 	private int size = 0;
 
-	public void insert(T data) {
+	//bubbles up current index of heap by comparing to parent index, if greater than swaps
+	public void bubbleInsert(int curr) {
+		if (curr == 0) return;
+		if (list.get(curr).compareTo(list.get(curr - 1) / 2)) {
+			exchange(curr, (curr - 1) / 2)
+		}
+		else {
+			return;
+		}
+	}
 
+	public void insert(T data) {
+		++size;
 		//checks if heap is empty
 		if (size == 0) {
 			list.add(data);
@@ -14,7 +25,9 @@ public class MaxHeap<T extends Comparable <T>> {
 		// adds to bottom first and looks to bubble up
 		else {
 			list.add(data);
+			bubbleInsert(size - 1);
 			// making an exchange method first
+
 		}
 	}
 
