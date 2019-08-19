@@ -6,7 +6,7 @@ public class MaxHeap<T extends Comparable <T>> {
 	private int size = 0;
 
 	//bubbles up current index of heap by comparing to parent index, if greater than swaps
-	public void bubbleInsert(int curr) {
+	private void bubbleInsert(int curr) {
 		int parent = (curr - 1) / 2;
 		if (curr == 0) return;
 		if (list.get(curr).compareTo(list.get(parent)) > 0) {
@@ -43,5 +43,8 @@ public class MaxHeap<T extends Comparable <T>> {
 
 	public static void main(String[] args) {
 
+		MaxHeap<Integer> heap = new MaxHeap<>();
+		heap.insert(1);
+		heap.insert(2);
 	}
 }
