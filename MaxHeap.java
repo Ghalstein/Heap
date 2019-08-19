@@ -18,7 +18,7 @@ public class MaxHeap<T extends Comparable <T>> {
 		}
 	}
 
-	public void insert(T data) {
+	public void add(T data) {
 		//checks if heap is empty
 		if (size == 0) {
 			list.add(data);
