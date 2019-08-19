@@ -46,6 +46,15 @@ public class MaxHeap<T extends Comparable <T>> {
 		return list.get(0);
 	}
 
+	private void sink(int curr) {
+		int child = (curr + 1) * 2;
+		if (curr == size) return;
+		if (list.get(curr).compareTo(list.get(child)) < 0) {
+			exchange(curr, child);
+			bubbleInsert(child);
+		}
+	}
+
 	public static void main(String[] args) {
 
 		MaxHeap<Integer> heap = new MaxHeap<>();
