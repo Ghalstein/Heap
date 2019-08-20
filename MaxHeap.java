@@ -47,6 +47,7 @@ public class MaxHeap<T extends Comparable <T>> {
 	}
 
 	public T removeMax() {
+		if (size == 0) return null;
 		T temp = list.get(0);
 		if (size == 1) {
 			list.remove(0);
@@ -90,6 +91,12 @@ public class MaxHeap<T extends Comparable <T>> {
 		System.out.println(heap.list);
 		System.out.println(heap.peek());
 		System.out.println(heap.list.get(heap.size - 1));
+		System.out.println(heap.removeMax());
+		System.out.println(heap.list);
+		System.out.println(heap.removeMax());
+		System.out.println(heap.list);
+		System.out.println(heap.removeMax());
+		System.out.println(heap.list);
 		System.out.println(heap.removeMax());
 		System.out.println(heap.list);
 		System.out.println(heap.removeMax());
