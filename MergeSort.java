@@ -18,13 +18,13 @@ public class MergeSort {
 			System.out.println(list);
 			if (!h1.isEmpty() && !h2.isEmpty()) {
 				int h1Peek = h1.removeMax();
-				int h2Peek = h1.removeMax();
+				int h2Peek = h2.removeMax();
 				if (h1Peek > h2Peek) {
 					list.add(h1Peek);
 					list.add(h2Peek);
 				}
 				else {
-					list.add(h1Peek);
+					list.add(h2Peek);
 					list.add(h1Peek);
 				}
 			}
@@ -33,7 +33,7 @@ public class MergeSort {
 				list.add(h1Peek);
 			}
 			else {
-				int h2Peek = h1.removeMax();
+				int h2Peek = h2.removeMax();
 				list.add(h2Peek);
 			}
 		}
