@@ -84,6 +84,15 @@ public class MaxHeap<T extends Comparable <T>> {
 		return this.list.toString();
 	}
 
+	public boolean isEmpty() {
+		if (size == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 	public static void main(String[] args) {
 
 		MaxHeap<Integer> heap = new MaxHeap<>();
