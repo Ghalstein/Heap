@@ -1,23 +1,23 @@
 import java.util.*;
 
-public class MergeSort<T extends Comparable<T>> {
+public class MergeSort {
 
-	private void listToHeap(MaxHeap<T> heap, ArrayList<T> list) {
-		for (T element : list) {
+	private static void listToHeap(MaxHeap<Integer> heap, ArrayList<Integer> list) {
+		for (int element : list) {
 			heap.add(element);
 		}
 	}
 
-	public ArrayList<T> sort(ArrayList<T> l1, ArrayList<T> l2) {
+	public static ArrayList<Integer> sort(ArrayList<Integer> l1, ArrayList<Integer> l2) {
 		MaxHeap<Integer> h1 = new MaxHeap<>();
 		MaxHeap<Integer> h2 = new MaxHeap<>();
-		ArrayList<T> list = ArrayList<>();
+		ArrayList<Integer> list = new ArrayList<>();
 		listToHeap(h1, l1);
 		listToHeap(h2, l2);
 		while (!h1.isEmpty() || !h2.isEmpty()) {
 			if (!h1.isEmpty() && !h2.isEmpty()) {
-				T h1Peek = h1.removeMax();
-				T h2Peek = h1.removeMax();
+				int h1Peek = h1.removeMax();
+				int h2Peek = h1.removeMax();
 				if (h1Peek.comapreTo(h2Peek) > 0) {
 					list.add(h1Peek);
 					list.add(h2Peek);
@@ -28,10 +28,12 @@ public class MergeSort<T extends Comparable<T>> {
 				}
 			}
 			else if (!h1.isEmpty()) {
+				int h1Peek = h1.removeMax();
 				list.add(h1Peek);
 			}
 			else {
-				list.add(h1Peek);
+				int h2Peek = h1.removeMax();
+				list.add(h2Peek);
 			}
 		}
 
@@ -45,5 +47,16 @@ public class MergeSort<T extends Comparable<T>> {
 		heap.add(10);
 		heap.add(9);
 		System.out.println(heap);
+		ArrayList<Integer> l1 = new ArrayList<>();
+		l1.add(5);
+		l1.add(15);
+		l1.add(1);
+		l1.add(8);
+		ArrayList<Integer> l2 = new ArrayList<>();
+		l2.add(2);
+		l2.add(1);
+		l2.add(10);
+		l2.add(3);
+		System.out.println(MergeSort.sort(l1, l2));
 	}
 }
