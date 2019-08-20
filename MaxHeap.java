@@ -93,13 +93,5 @@ public class MaxHeap<T extends Comparable <T>> {
 		System.out.println(heap.list.get(heap.size - 1));
 		System.out.println(heap.removeMax());
 		System.out.println(heap.list);
-		System.out.println(heap.removeMax());
-		System.out.println(heap.list);
-		System.out.println(heap.removeMax());
-		System.out.println(heap.list);
-		System.out.println(heap.removeMax());
-		System.out.println(heap.list);
-		System.out.println(heap.removeMax());
-		System.out.println(heap.list);
 	}
 }
