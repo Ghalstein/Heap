@@ -2,8 +2,15 @@ import java.util.*;
 
 public class MergeSort<T extends Comparable<T>> {
 
-	public void sort(ArrayList<T> l1, ArrayList<T> l2) {
+	private void listToHeap(MaxHeap<T> heap, ArrayList<T> list) {
+		for (T element : list) {
+			heap.add(element);
+		}
+	}
 
+	public void sort(ArrayList<T> l1, ArrayList<T> l2) {
+		MaxHeap<Integer> h1 = new MaxHeap<>();
+		MaxHeap<Integer> h2 = new MaxHeap<>();
 	}
 
 	public static void main(String[] args) {
