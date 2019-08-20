@@ -15,10 +15,11 @@ public class MergeSort {
 		listToHeap(h1, l1);
 		listToHeap(h2, l2);
 		while (!h1.isEmpty() || !h2.isEmpty()) {
+			System.out.println(list);
 			if (!h1.isEmpty() && !h2.isEmpty()) {
 				int h1Peek = h1.removeMax();
 				int h2Peek = h1.removeMax();
-				if (h1Peek.comapreTo(h2Peek) > 0) {
+				if (h1Peek > h2Peek) {
 					list.add(h1Peek);
 					list.add(h2Peek);
 				}
