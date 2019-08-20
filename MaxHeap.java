@@ -80,6 +80,19 @@ public class MaxHeap<T extends Comparable <T>> {
 		}
 	}
 
+	public String toString() {
+		return this.list.toString();
+	}
+
+	public boolean isEmpty() {
+		if (size == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 	public static void main(String[] args) {
 
 		MaxHeap<Integer> heap = new MaxHeap<>();
@@ -91,14 +104,6 @@ public class MaxHeap<T extends Comparable <T>> {
 		System.out.println(heap.list);
 		System.out.println(heap.peek());
 		System.out.println(heap.list.get(heap.size - 1));
-		System.out.println(heap.removeMax());
-		System.out.println(heap.list);
-		System.out.println(heap.removeMax());
-		System.out.println(heap.list);
-		System.out.println(heap.removeMax());
-		System.out.println(heap.list);
-		System.out.println(heap.removeMax());
-		System.out.println(heap.list);
 		System.out.println(heap.removeMax());
 		System.out.println(heap.list);
 	}
