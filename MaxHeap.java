@@ -80,6 +80,10 @@ public class MaxHeap<T extends Comparable <T>> {
 		}
 	}
 
+	public String toString() {
+		return this.list.toString();
+	}
+
 	public static void main(String[] args) {
 
 		MaxHeap<Integer> heap = new MaxHeap<>();
