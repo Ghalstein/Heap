@@ -47,21 +47,49 @@ public class MaxHeap<T extends Comparable <T>> {
 	}
 
 	public T removeMax() {
+		if (size == 0) return null;
+		T temp = list.get(0);
 		if (size == 1) {
-			T temp = list.get(0);
-			list.set(0, null);
+			list.remove(0);
+			--size;
 			return  temp;
 		}
-		exchange(0, size);
+		else {
+			exchange(0, size - 1);
+			list.remove(--size);
+			sink(0);
+			return temp;
+		}
 
 	}
 
 	private void sink(int curr) {
+		if (curr == 0) {
+			if (size >= 3) {
+				if (list.get(1).compareTo(list.get(2)) > 0) {
+					exchange(curr, 1);
+				}
+			}
+		}
 		int child = (curr + 1) * 2;
 		if (curr == size) return;
+		if (size <= child) return;
 		if (list.get(curr).compareTo(list.get(child)) < 0) {
 			exchange(curr, child);
-			bubbleInsert(child);
+			sink(child);
+		}
+	}
+
+	public String toString() {
+		return this.list.toString();
+	}
+
+	public boolean isEmpty() {
+		if (size == 0) {
+			return true;
+		}
+		else {
+			return false;
 		}
 	}
 
@@ -75,5 +103,8 @@ public class MaxHeap<T extends Comparable <T>> {
 		System.out.println(heap.size);
 		System.out.println(heap.list);
 		System.out.println(heap.peek());
+		System.out.println(heap.list.get(heap.size - 1));
+		System.out.println(heap.removeMax());
+		System.out.println(heap.list);
 	}
 }
