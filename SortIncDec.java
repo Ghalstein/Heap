@@ -1,6 +1,10 @@
 public class SortIncDec {
 
-	public static void main(String[] args) {
+	private static int findIncrement() {
 		
+	}
+
+	public static void main(String[] args) {
+
 	}
 }
