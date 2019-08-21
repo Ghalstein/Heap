@@ -2,6 +2,8 @@ import java.util.*;
 
 public class SortIncDec {
 
+
+	// finds the increment at which the array is increasing and decreasing at
 	private static int findIncrement(ArrayList<Integer> list) {
 		int count = 1;
 		int before = list.get(0);
@@ -14,6 +16,12 @@ public class SortIncDec {
 			}
 		}
 		return count;
+	}
+
+	// sort the array based on the increments
+	public static ArrayList<Integer> sort() {
+		ArrayList<Integer> list = ArrayList<>();
+
 	}
 
 	public static void main(String[] args) {
