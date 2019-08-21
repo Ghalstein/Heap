@@ -49,7 +49,6 @@ public class MergeSort {
 		heap.add(9);
 		System.out.println(heap);
 		ArrayList<Integer> l1 = new ArrayList<>();
-		l1.add(5);
 		l1.add(15);
 		l1.add(1);
 		l1.add(8);
