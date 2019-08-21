@@ -1,11 +1,16 @@
-public class SortIncDec<T extends Comparable <T>> {
+import java.util.*;
 
-	private static int findIncrement(ArrayList<T> list) {
+public class SortIncDec {
+
+	private static int findIncrement(ArrayList<Integer> list) {
 		int count = 1;
-		int before = list.get(0)
+		int before = list.get(0);
 		while (count < list.size()) {
 			if (before < list.get(count)) {
 				before = list.get(count++);
+			}
+			else {
+				break;
 			}
 		}
 		return count;
@@ -15,7 +20,7 @@ public class SortIncDec<T extends Comparable <T>> {
 		ArrayList<Integer> list = new ArrayList<>();
 		list.add(1);
 		list.add(2);
-		list.add(3);
-		System.out.println(findIncrement())
+		list.add(1);
+		System.out.println(findIncrement(list));
 	}
 }
