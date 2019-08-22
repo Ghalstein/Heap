@@ -68,6 +68,7 @@ public class MaxHeap<T extends Comparable <T>> {
 			if (size >= 3) {
 				if (list.get(1).compareTo(list.get(2)) > 0) {
 					exchange(curr, 1);
+					sink(1);
 				}
 			}
 		}
