@@ -2,6 +2,8 @@ import java.util.*;
 
 public class SortIncDec {
 
+	private static HashMap<Integer, Boolean> map = new HashMap<>();
+
 
 	// finds the increment at which the array is increasing and decreasing at
 	private static int findIncrement(ArrayList<Integer> list) {
@@ -19,8 +21,13 @@ public class SortIncDec {
 	}
 
 	// sort the array based on the increments
-	public static ArrayList<Integer> sort() {
+	public static ArrayList<Integer> sort(ArrayList<Integer> arr) {
 		ArrayList<Integer> list = ArrayList<>();
+		// just finds the the amount of elements in an increase/decrease pattern
+		int increment = findIncrement(arr);
+		while (!map.contains(false)) {
+			if ()
+		}
 
 	}
 

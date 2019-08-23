@@ -72,12 +72,21 @@ public class MaxHeap<T extends Comparable <T>> {
 				}
 			}
 		}
+		if (size == 2) {
+			if (list.get(0).compareTo(list.get(1)) < 0) {
+				exchange(curr, 1);
+			}
+		}
 		int child = (curr + 1) * 2;
 		if (curr == size) return;
 		if (size <= child) return;
 		if (list.get(curr).compareTo(list.get(child)) < 0) {
 			exchange(curr, child);
 			sink(child);
+		}
+		else if (list.get(curr).compareTo(list.get(child - 1)) < 0) {
+			exchange(curr, child - 1);
+			sink(child - 1);
 		}
 	}
 
