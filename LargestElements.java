@@ -9,6 +9,7 @@ public class LargestElements {
 		for (int curr : arr) {
 			heap.add(curr);
 		}
+		System.out.println(heap);
 		for (int i = 0; i < k; ++i) {
 			largest.add(heap.removeMax());
 		}
@@ -17,5 +18,14 @@ public class LargestElements {
 
 	public static void main(String[] args) {
 
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(5);
+		list.add(6);
+		list.add(8);
+		list.add(9);
+		list.add(12);
+		list.add(20);
+		System.out.println(compute(5, list));
 	}
 }
