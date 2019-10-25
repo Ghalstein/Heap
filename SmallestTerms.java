@@ -24,5 +24,8 @@ public class SmallestTerms {
     int[] arr = {1,2, -1, -3, 5, 8, 10, 11};
     int[] test = find(5, arr);
     System.out.println(Arrays.toString(test));
+    int[] arr1 = {1,2, -1, -3, 5};
+    int[] test1 = find(5, arr1);
+    System.out.println(Arrays.toString(test1));
   }
 }
